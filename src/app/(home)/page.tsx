@@ -235,7 +235,7 @@ export default function Home() {
 
       <section className='w-full bg-white pt-14 pb-12'>
         <div className='max-w-1170 mx-auto w-full'>
-          <h2 className='text-color font-bold tracking-tight text-center whitespace-pre-wrap text-6xl mb-6 w-3/4 mx-auto'>
+          <h2 className='text-color font-bold tracking-tight text-center whitespace-pre-wrap text-4xl md:text-6xl mb-6 w-3/4 mx-auto'>
             73k products in 110 categories. A single objective.
           </h2>
           <p className='text-color text-lg text-center w-4/5 mx-auto mb-10'>
