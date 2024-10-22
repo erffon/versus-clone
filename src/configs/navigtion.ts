@@ -4,7 +4,14 @@ import { AppRoutes } from './appRoutes'
 
 export interface NavLink {
   label: string
-  href?: string
+  href: string
+  icon?: IconType
+  subMenu?: SubMenu[]
+  badge?: string
+}
+
+export interface SubMenu {
+  label: string
   icon?: IconType
   subMenu?: NavLink[]
   badge?: string

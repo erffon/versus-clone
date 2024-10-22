@@ -1,15 +1,19 @@
-import { NavLink } from '@/configs'
 import Link from 'next/link'
 import { MouseEventHandler } from 'react'
+import { IconType } from 'react-icons'
 import NavBadge from './NavBadge'
 
-const Submenu = (
-  props: NavLink & {
-    onMouseEnter?: MouseEventHandler<HTMLDivElement>
-    onMouseLeave?: MouseEventHandler<HTMLDivElement>
-    activeSubMenu?: string
-  }
-) => {
+interface Submenu {
+  onMouseEnter?: MouseEventHandler<HTMLDivElement>
+  onMouseLeave?: MouseEventHandler<HTMLDivElement>
+  activeSubMenu?: string
+  label: string
+  href?: string
+  icon?: IconType
+  badge?: string
+}
+
+const Submenu = (props: Submenu) => {
   const { href, label, badge, icon: Icon, onMouseEnter, onMouseLeave, activeSubMenu } = props
 
   return (
@@ -21,12 +25,30 @@ const Submenu = (
         activeSubMenu === label ? 'border-b-soft-silver' : ''
       }`}
     >
-      {Icon && <Icon aria-hidden='true' className='h-4 w-4 text-neutral-gray group-hover:text-vibrant-blue' />}
-
-      <Link href={href} className='text-neutral-gray group-hover:text-vibrant-blue flex items-center gap-2'>
-        {label}
-        {badge && <NavBadge badge={badge} />}
-      </Link>
+      {href ? (
+        <Link href={href} className='text-neutral-gray group-hover:text-vibrant-blue flex items-center gap-2'>
+          {Icon && <Icon aria-hidden='true' className='h-4 w-4 text-neutral-gray group-hover:text-vibrant-blue' />}
+          {label}
+          {badge && <NavBadge badge={badge} />}
+        </Link>
+      ) : (
+        <div
+          className={`text-neutral-gray group-hover:text-vibrant-blue flex items-center gap-2 ${
+            activeSubMenu === label ? 'text-vibrant-blue' : ''
+          }`}
+        >
+          {Icon && (
+            <Icon
+              aria-hidden='true'
+              className={`h-4 w-4 text-neutral-gray group-hover:text-vibrant-blue ${
+                activeSubMenu === label ? 'text-vibrant-blue' : ''
+              }`}
+            />
+          )}
+          {label}
+          {badge && <NavBadge badge={badge} />}
+        </div>
+      )}
     </div>
   )
 }
