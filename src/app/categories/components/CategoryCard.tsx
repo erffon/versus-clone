@@ -1,5 +1,6 @@
 import { AppRoutes } from '@/configs'
 import Link from 'next/link'
+import { TbAward } from 'react-icons/tb'
 
 // CategoryCard.tsx
 interface CategoryCard {
@@ -29,7 +30,9 @@ const CategoryCard = ({ data }: CategoryCard) => {
             className='mb-5 break-inside-avoid  border border-gray-200 rounded-lg shadow bg-soft-alabaster inline-block w-full'
           >
             <div className='flex items-center bg-categoryCard p-4'>
-              <img src={category.iconUrl} alt={category.title} className='w-8 h-8 mr-2' />
+              {/* //TODO - must use image url */}
+              <TbAward  size={32} className='text-black mr-2' />
+              {/* <img src={category.iconUrl} alt={category.title} className='w-8 h-8 mr-2' /> */}
               <h3 className='text-lg font-bold text-black'>{category.title}</h3> {/* blue color from the image */}
             </div>
             <ul className='space-y-2 p-4'>
