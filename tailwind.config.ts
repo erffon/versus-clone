@@ -11,17 +11,17 @@ const config: Config = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
-        'badge-back': '#eef2ff',
-        active: '#3c59fc',
-        'badge-border': '#1d4eff',
-        'nav-back': '#161616',
-        submenu: '#616161',
-        'submenu-hover': '#dfdfdf',
-        homeBg: '#531889',
-        'footer-title': '#aaa',
-        bg: '#f6f7fb',
-        color: '#313131',
-        color2: '#6366f1'
+        'light-periwinkle': '#eef2ff',
+        'vibrant-blue': '#3c59fc',
+        'royal-blue': '#1d4eff',
+        'deep-charcoal': '#161616',
+        'neutral-gray': '#616161',
+        'soft-silver': '#dfdfdf',
+        'royal-purple': '#531889',
+        'muted-gray': '#aaa',
+        'soft-alabaster': '#f6f7fb',
+        'dark-smoke': '#313131',
+        'lavender-blue': '#6366f1'
       },
       height: {
         0.5: '0.125rem'

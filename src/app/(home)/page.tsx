@@ -235,21 +235,21 @@ export default function Home() {
 
       <section className='w-full bg-white pt-14 pb-12'>
         <div className='max-w-1170 mx-auto w-full'>
-          <h2 className='text-color font-bold tracking-tight text-center whitespace-pre-wrap text-4xl md:text-6xl mb-6 w-3/4 mx-auto'>
+          <h2 className='text-dark-smoke font-bold tracking-tight text-center whitespace-pre-wrap text-4xl md:text-6xl mb-6 w-3/4 mx-auto'>
             73k products in 110 categories. A single objective.
           </h2>
-          <p className='text-color text-lg text-center w-4/5 mx-auto mb-10'>
+          <p className='text-dark-smoke text-lg text-center w-4/5 mx-auto mb-10'>
             We have been working for more than a decade to become your reference guide when it comes to comparisons. We
             are an impartial team of technology enthusiasts: our sole mission is to help you make informed decisions.
           </p>
           <div className='flex items-center justify-center gap-8'>
             <Link
-              className='px-8 py-3 rounded-full duration-300 bg-active hover:bg-color2 text-sm font-semibold'
+              className='px-8 py-3 rounded-full duration-300 bg-vibrant-blue hover:bg-lavender-blue text-sm font-semibold'
               href={'/'}
             >
               See all categories
             </Link>
-            <Link className='duration-300 text-active hover:text-color2 text-sm font-semibold' href={'/'}>
+            <Link className='duration-300 text-vibrant-blue hover:text-lavender-blue text-sm font-semibold' href={'/'}>
               How we work →
             </Link>
           </div>

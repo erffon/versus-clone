@@ -34,7 +34,7 @@ const NavItem = (props: NavLink) => {
           <div className='overflow-hidden rounded-lg'>
             <CloseButton ref={buttonRef} className={'hidden'}></CloseButton>
             <div className='flex'>
-              <div className={!!activeSubMenu ? `border-r-submenu-hover border-r` : ''}>
+              <div className={!!activeSubMenu ? `border-r-soft-silver border-r` : ''}>
                 {subMenu?.map(item => (
                   <Submenu
                     {...item}
@@ -66,7 +66,7 @@ const NavItem = (props: NavLink) => {
     )
 
   return (
-    <Link href={href} className='text-sm font-semibold leading-6 flex items-center gap-2 uppercase'>
+    <Link href={href} className='text-sm font-semibold leading-6 flex items-center gap-2 uppercase hover:underline'>
       {Icon && <Icon />}
       {label}
       {badge && <NavBadge badge={badge} />}

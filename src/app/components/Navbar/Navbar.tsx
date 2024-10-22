@@ -32,7 +32,9 @@ const Navbar = () => {
 
   return (
     <header
-      className={`${scroll > 0 ? 'bg-nav-back' : 'bg-transparent'} duration-300 fixed top-0 left-0 w-full z-[10000]`}
+      className={`${
+        scroll > 0 ? 'bg-deep-charcoal' : 'bg-transparent'
+      } duration-300 fixed top-0 left-0 w-full z-[10000]`}
     >
       <nav aria-label='Global' className='mx-auto flex items-center justify-between py-5 max-w-1170 w-11/12'>
         <div className='flex lg:flex-1'>

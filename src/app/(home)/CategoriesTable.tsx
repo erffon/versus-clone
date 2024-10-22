@@ -18,8 +18,8 @@ const CategoriesTable = (props: CategoriesTable) => {
   return (
     <div className='flex flex-wrap justify-center items-center lg:flex-nowrap gap-8 pb-4 w-full'>
       <div className='w-full md:w-auto'>
-        <h3 className='text-active font-bold text-sm uppercase mb-1 tracking-[3px]'>popular</h3>
-        <ul className='border rounded-md divide-y divide-gray-300 bg-bg'>
+        <h3 className='text-vibrant-blue font-bold text-sm uppercase mb-1 tracking-[3px]'>popular</h3>
+        <ul className='border rounded-md divide-y divide-gray-300 bg-soft-alabaster'>
           {popular.map((item, index) => (
             <li key={item.id}>
               <Link href={`/${item.name}`} className='flex items-center py-2 px-4 space-x-4 group'>
@@ -32,8 +32,8 @@ const CategoriesTable = (props: CategoriesTable) => {
         </ul>
       </div>
       <div className='w-full md:w-auto'>
-        <h3 className='text-active font-bold text-sm uppercase mb-1 tracking-[3px]'>top rated</h3>
-        <ul className='border rounded-md divide-y divide-gray-300 bg-bg'>
+        <h3 className='text-vibrant-blue font-bold text-sm uppercase mb-1 tracking-[3px]'>top rated</h3>
+        <ul className='border rounded-md divide-y divide-gray-300 bg-soft-alabaster'>
           {topRated.map((item, index) => (
             <li key={item.id}>
               <Link href={`/${item.name}`} className='flex items-center py-2 px-4 space-x-4 group'>
@@ -46,8 +46,8 @@ const CategoriesTable = (props: CategoriesTable) => {
         </ul>
       </div>
       <div className='w-full md:w-auto'>
-        <h3 className='text-active font-bold text-sm uppercase mb-1 tracking-[3px]'>newest</h3>
-        <ul className='border rounded-md divide-y divide-gray-300 bg-bg'>
+        <h3 className='text-vibrant-blue font-bold text-sm uppercase mb-1 tracking-[3px]'>newest</h3>
+        <ul className='border rounded-md divide-y divide-gray-300 bg-soft-alabaster'>
           {newest.map((item, index) => (
             <li key={item.id}>
               <Link href={`/${item.name}`} className='flex items-center py-2 px-4 space-x-4 group'>

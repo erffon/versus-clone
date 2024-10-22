@@ -38,8 +38,8 @@ const Categories = (props: {
 
   return (
     <>
-      <h3 className='text-submenu text-xs font-bold capitalize tracking-[3px]'>{title}</h3>
-      <h2 className='text-black text-2xl font-bold capitalize relative mb-6 after:content-[""] after:absolute after:-bottom-2 after:left-0 after:bg-nav-back after:w-10 after:h-px'>
+      <h3 className='text-neutral-gray text-xs font-bold capitalize tracking-[3px]'>{title}</h3>
+      <h2 className='text-black text-2xl font-bold capitalize relative mb-6 after:content-[""] after:absolute after:-bottom-2 after:left-0 after:bg-deep-charcoal after:w-10 after:h-px'>
         {categoryTitle}
       </h2>
       <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-4 auto-rows-[25px] mb-8'>

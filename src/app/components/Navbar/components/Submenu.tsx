@@ -18,12 +18,12 @@ const Submenu = (
       onMouseLeave={onMouseLeave}
       key={label}
       className={`group relative flex items-center gap-2 py-2 px-4 text-sm leading-6 border-b border-b-transparent  ${
-        activeSubMenu === label ? 'border-b-submenu-hover' : ''
+        activeSubMenu === label ? 'border-b-soft-silver' : ''
       }`}
     >
-      {Icon && <Icon aria-hidden='true' className='h-4 w-4 text-submenu group-hover:text-active' />}
+      {Icon && <Icon aria-hidden='true' className='h-4 w-4 text-neutral-gray group-hover:text-vibrant-blue' />}
 
-      <Link href={href} className='text-submenu group-hover:text-active flex items-center gap-2'>
+      <Link href={href} className='text-neutral-gray group-hover:text-vibrant-blue flex items-center gap-2'>
         {label}
         {badge && <NavBadge badge={badge} />}
       </Link>
