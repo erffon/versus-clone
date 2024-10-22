@@ -1,3 +1,4 @@
+import { AppRoutes } from '@/configs'
 import Link from 'next/link'
 
 interface CategoriesTable {
@@ -10,6 +11,7 @@ interface Datum {
   id: number
   imageUrl: string
   name: string
+  category: string
 }
 
 const CategoriesTable = (props: CategoriesTable) => {
@@ -22,7 +24,10 @@ const CategoriesTable = (props: CategoriesTable) => {
         <ul className='border rounded-md divide-y divide-gray-300 bg-soft-alabaster'>
           {popular.map((item, index) => (
             <li key={item.id}>
-              <Link href={`/${item.name}`} className='flex items-center py-2 px-4 space-x-4 group'>
+              <Link
+                href={`${AppRoutes.Categories}/${item.category}/${item.name}`}
+                className='flex items-center py-2 px-4 space-x-4 group'
+              >
                 <span className='font-bold text-gray-800'>{index + 1}</span>
                 <img src={item.imageUrl} alt={item.name} className='w-12 h-12' />
                 <p className='group-hover:underline text-gray-700'>{item.name}</p>
@@ -36,7 +41,10 @@ const CategoriesTable = (props: CategoriesTable) => {
         <ul className='border rounded-md divide-y divide-gray-300 bg-soft-alabaster'>
           {topRated.map((item, index) => (
             <li key={item.id}>
-              <Link href={`/${item.name}`} className='flex items-center py-2 px-4 space-x-4 group'>
+              <Link
+                href={`${AppRoutes.Categories}/${item.category}/${item.name}`}
+                className='flex items-center py-2 px-4 space-x-4 group'
+              >
                 <span className='font-bold text-gray-800'>{index + 1}</span>
                 <img src={item.imageUrl} alt={item.name} className='w-12 h-12' />
                 <p className='group-hover:underline text-gray-700'>{item.name}</p>
@@ -50,7 +58,10 @@ const CategoriesTable = (props: CategoriesTable) => {
         <ul className='border rounded-md divide-y divide-gray-300 bg-soft-alabaster'>
           {newest.map((item, index) => (
             <li key={item.id}>
-              <Link href={`/${item.name}`} className='flex items-center py-2 px-4 space-x-4 group'>
+              <Link
+                href={`${AppRoutes.Categories}/${item.category}/${item.name}`}
+                className='flex items-center py-2 px-4 space-x-4 group'
+              >
                 <span className='font-bold text-gray-800'>{index + 1}</span>
                 <img src={item.imageUrl} alt={item.name} className='w-12 h-12' />
                 <p className='group-hover:underline text-gray-700'>{item.name}</p>

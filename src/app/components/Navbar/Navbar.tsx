@@ -1,6 +1,6 @@
 'use client'
 
-import { navLinks } from '@/configs'
+import { AppRoutes, navLinks } from '@/configs'
 import { useScrollPosition } from '@/hooks'
 import { Dialog, DialogPanel, Disclosure, DisclosureButton, DisclosurePanel, PopoverGroup } from '@headlessui/react'
 import Image from 'next/image'
@@ -17,6 +17,7 @@ import {
   TbRepeat
 } from 'react-icons/tb'
 import { NavItem } from './components'
+import { usePathname } from 'next/navigation'
 
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: TbChartPie },
@@ -29,16 +30,17 @@ const products = [
 const Navbar = () => {
   const scroll = useScrollPosition()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const path = usePathname()
 
   return (
     <header
       className={`${
-        scroll > 0 ? 'bg-deep-charcoal' : 'bg-transparent'
+        scroll > 0 || path !== AppRoutes.Home ? 'bg-deep-charcoal' : 'bg-transparent'
       } duration-300 fixed top-0 left-0 w-full z-[10000]`}
     >
       <nav aria-label='Global' className='mx-auto flex items-center justify-between py-5 max-w-1170 w-11/12'>
         <div className='flex lg:flex-1'>
-          <Link href='/'>
+          <Link href={AppRoutes.Home}>
             <Image alt='' src='/assets/versus.svg' width={95} height={21} />
           </Link>
         </div>

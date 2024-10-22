@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Categories from './Categories'
 import CategoriesTable from './CategoriesTable'
 import ComparisonSlider, { Comparison } from './ComparisonSlider'
+import { AppRoutes } from '@/configs'
 
 const articles = [
   {
@@ -9,56 +10,56 @@ const articles = [
     title: 'Cars updated',
     description: 'We updated our cars category with more data and more than 4000 models. Check it out!',
     imageUrl: '/assets/cars-updated.jpg',
-    href: '/'
+    href: AppRoutes.Home
   },
   {
     id: 2,
     title: '',
     description: 'Mini LED vs OLED: What’s the difference and which TV should you buy?',
     imageUrl: '/assets/oled-vs-mini-led.webp',
-    href: '/'
+    href: AppRoutes.Home
   },
   {
     id: 3,
     title: 'Hisense 110UX 110"',
     description: 'New product / Hisense 110UX 110"',
     imageUrl: '/assets/hisense-110ux.webp',
-    href: '/'
+    href: AppRoutes.Home
   },
   {
     id: 4,
     title: '',
     description: 'SHOCKING camera comparison! Pixel 9 Pro XL vs Sony Xperia 1 VI',
     imageUrl: '/assets/camera-only.jpg',
-    href: '/'
+    href: AppRoutes.Home
   },
   {
     id: 6,
     title: '',
     description: 'Mini LED vs OLED: What’s the difference and which TV should you buy?',
     imageUrl: '/assets/oled-vs-mini-led.webp',
-    href: '/'
+    href: AppRoutes.Home
   },
   {
     id: 5,
     title: 'Cars updated',
     description: 'We updated our cars category with more data and more than 4000 models. Check it out!',
     imageUrl: '/assets/cars-updated.jpg',
-    href: '/'
+    href: AppRoutes.Home
   },
   {
     id: 8,
     title: '',
     description: 'SHOCKING camera comparison! Pixel 9 Pro XL vs Sony Xperia 1 VI',
     imageUrl: '/assets/camera-only.jpg',
-    href: '/'
+    href: AppRoutes.Home
   },
   {
     id: 7,
     title: 'Hisense 110UX 110"',
     description: 'New product / Hisense 110UX 110"',
     imageUrl: '/assets/hisense-110ux.webp',
-    href: '/'
+    href: AppRoutes.Home
   },
 
   {
@@ -66,7 +67,7 @@ const articles = [
     title: 'Cars updated',
     description: 'We updated our cars category with more data and more than 4000 models. Check it out!',
     imageUrl: '/assets/cars-updated.jpg',
-    href: '/'
+    href: AppRoutes.Home
   },
 
   {
@@ -74,45 +75,45 @@ const articles = [
     title: '',
     description: 'SHOCKING camera comparison! Pixel 9 Pro XL vs Sony Xperia 1 VI',
     imageUrl: '/assets/camera-only.jpg',
-    href: '/'
+    href: AppRoutes.Home
   },
   {
     id: 9,
     title: '',
     description: 'Mini LED vs OLED: What’s the difference and which TV should you buy?',
     imageUrl: '/assets/oled-vs-mini-led.webp',
-    href: '/'
+    href: AppRoutes.Home
   },
   {
     id: 12,
     title: 'Hisense 110UX 110"',
     description: 'New product / Hisense 110UX 110"',
     imageUrl: '/assets/hisense-110ux.webp',
-    href: '/'
+    href: AppRoutes.Home
   }
 ]
 
 const cameras = {
   popular: [
-    { id: 1, imageUrl: '/assets/canon-eos-200d.webp', name: 'Panasonic Lumix DC-S5' },
-    { id: 2, imageUrl: '/assets/canon-eos-200d.webp', name: 'Sony a7S III' },
-    { id: 3, imageUrl: '/assets/canon-eos-200d.webp', name: 'Olympus OM-D E-M10 Mark IV' },
-    { id: 4, imageUrl: '/assets/canon-eos-200d.webp', name: 'Nikon Z 5' },
-    { id: 5, imageUrl: '/assets/canon-eos-200d.webp', name: 'Leica M10-R' }
+    { category: 'camera', id: 1, imageUrl: '/assets/canon-eos-200d.webp', name: 'Panasonic Lumix DC-S5' },
+    { category: 'camera', id: 2, imageUrl: '/assets/canon-eos-200d.webp', name: 'Sony a7S III' },
+    { category: 'camera', id: 3, imageUrl: '/assets/canon-eos-200d.webp', name: 'Olympus OM-D E-M10 Mark IV' },
+    { category: 'camera', id: 4, imageUrl: '/assets/canon-eos-200d.webp', name: 'Nikon Z 5' },
+    { category: 'camera', id: 5, imageUrl: '/assets/canon-eos-200d.webp', name: 'Leica M10-R' }
   ],
   topRated: [
-    { id: 1, imageUrl: '/assets/canon-eos-200d.webp', name: 'Panasonic Lumix DC-S5' },
-    { id: 2, imageUrl: '/assets/canon-eos-200d.webp', name: 'Sony a7S III' },
-    { id: 3, imageUrl: '/assets/canon-eos-200d.webp', name: 'Olympus OM-D E-M10 Mark IV' },
-    { id: 4, imageUrl: '/assets/canon-eos-200d.webp', name: 'Nikon Z 5' },
-    { id: 5, imageUrl: '/assets/canon-eos-200d.webp', name: 'Leica M10-R' }
+    { category: 'camera', id: 1, imageUrl: '/assets/canon-eos-200d.webp', name: 'Panasonic Lumix DC-S5' },
+    { category: 'camera', id: 2, imageUrl: '/assets/canon-eos-200d.webp', name: 'Sony a7S III' },
+    { category: 'camera', id: 3, imageUrl: '/assets/canon-eos-200d.webp', name: 'Olympus OM-D E-M10 Mark IV' },
+    { category: 'camera', id: 4, imageUrl: '/assets/canon-eos-200d.webp', name: 'Nikon Z 5' },
+    { category: 'camera', id: 5, imageUrl: '/assets/canon-eos-200d.webp', name: 'Leica M10-R' }
   ],
   newest: [
-    { id: 1, imageUrl: '/assets/canon-eos-200d.webp', name: 'Panasonic Lumix DC-S5' },
-    { id: 2, imageUrl: '/assets/canon-eos-200d.webp', name: 'Sony a7S III' },
-    { id: 3, imageUrl: '/assets/canon-eos-200d.webp', name: 'Olympus OM-D E-M10 Mark IV' },
-    { id: 4, imageUrl: '/assets/canon-eos-200d.webp', name: 'Nikon Z 5' },
-    { id: 5, imageUrl: '/assets/canon-eos-200d.webp', name: 'Leica M10-R' }
+    { category: 'camera', id: 1, imageUrl: '/assets/canon-eos-200d.webp', name: 'Panasonic Lumix DC-S5' },
+    { category: 'camera', id: 2, imageUrl: '/assets/canon-eos-200d.webp', name: 'Sony a7S III' },
+    { category: 'camera', id: 3, imageUrl: '/assets/canon-eos-200d.webp', name: 'Olympus OM-D E-M10 Mark IV' },
+    { category: 'camera', id: 4, imageUrl: '/assets/canon-eos-200d.webp', name: 'Nikon Z 5' },
+    { category: 'camera', id: 5, imageUrl: '/assets/canon-eos-200d.webp', name: 'Leica M10-R' }
   ]
 }
 
@@ -121,31 +122,31 @@ const cameraComparisons: Comparison[] = [
     id: 1,
     first: { imageUrl: '/assets/canon-eos-200d.webp', name: 'Canon EOS 200D' },
     second: { imageUrl: '/assets/canon-eos-200d.webp', name: 'Canon EOS M50' },
-    pageUrl: '/'
+    pageUrl: AppRoutes.Home
   },
   {
     id: 2,
     first: { imageUrl: '/assets/canon-eos-200d.webp', name: 'Canon PowerShot SX720 HS' },
     second: { imageUrl: '/assets/canon-eos-200d.webp', name: 'Canon PowerShot SX740 HS' },
-    pageUrl: '/'
+    pageUrl: AppRoutes.Home
   },
   {
     id: 3,
     first: { imageUrl: '/assets/canon-eos-200d.webp', name: 'Blackmagic Pocket Cinema Camera 6K' },
     second: { imageUrl: '/assets/canon-eos-200d.webp', name: 'Sony Alpha a7 III' },
-    pageUrl: '/'
+    pageUrl: AppRoutes.Home
   },
   {
     id: 4,
     first: { imageUrl: '/assets/canon-eos-200d.webp', name: 'Canon EOS 200D' },
     second: { imageUrl: '/assets/canon-eos-200d.webp', name: 'Canon EOS 250D' },
-    pageUrl: '/'
+    pageUrl: AppRoutes.Home
   },
   {
     id: 5,
     first: { imageUrl: '/assets/canon-eos-200d.webp', name: 'Canon EOS M50' },
     second: { imageUrl: '/assets/canon-eos-200d.webp', name: 'Sony A6000' },
-    pageUrl: '/'
+    pageUrl: AppRoutes.Home
   }
 ]
 
@@ -176,23 +177,26 @@ export default function Home() {
             </span>
           </h1>
           <p className='text-white text-xl md:text-2xl font-normal mb-[4.5rem] text-center'>
-            <Link className='no-underline hover:underline duration-300 capitalize' href='/en/phone'>
+            <Link
+              className='no-underline hover:underline duration-300 capitalize'
+              href={`${AppRoutes.Categories}/phone`}
+            >
               smartphones
             </Link>
             ,{' '}
-            <Link className='no-underline hover:underline duration-300' href='/en/city'>
+            <Link className='no-underline hover:underline duration-300' href={`${AppRoutes.Categories}/city`}>
               cities
             </Link>
             ,{' '}
-            <Link className='no-underline hover:underline duration-300' href='/en/graphics-card'>
+            <Link className='no-underline hover:underline duration-300' href={`${AppRoutes.Categories}/graphics-card`}>
               graphics cards
             </Link>
             ,{' '}
-            <Link className='no-underline hover:underline duration-300' href='/en/university'>
+            <Link className='no-underline hover:underline duration-300' href={`${AppRoutes.Categories}/university`}>
               universities
             </Link>
             , and{' '}
-            <Link className='no-underline hover:underline duration-300' href='/en/categories'>
+            <Link className='no-underline hover:underline duration-300' href={`${AppRoutes.Categories}/categories`}>
               much more
             </Link>
           </p>
@@ -245,11 +249,14 @@ export default function Home() {
           <div className='flex items-center justify-center gap-8'>
             <Link
               className='px-8 py-3 rounded-full duration-300 bg-vibrant-blue hover:bg-lavender-blue text-sm font-semibold'
-              href={'/'}
+              href={AppRoutes.Categories}
             >
               See all categories
             </Link>
-            <Link className='duration-300 text-vibrant-blue hover:text-lavender-blue text-sm font-semibold' href={'/'}>
+            <Link
+              className='duration-300 text-vibrant-blue hover:text-lavender-blue text-sm font-semibold'
+              href={AppRoutes.Home}
+            >
               How we work →
             </Link>
           </div>

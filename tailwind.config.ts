@@ -27,7 +27,8 @@ const config: Config = {
         0.5: '0.125rem'
       },
       backgroundImage: {
-        hero: 'radial-gradient(120% 210% at 95% 0px, #531889 10%, #000 70%)'
+        hero: 'radial-gradient(120% 210% at 95% 0px, #531889 10%, #000 70%)',
+        categoryCard: 'linear-gradient(243deg,#f3f5f8,#e7ebf1)'
       },
       maxWidth: {
         1170: '1170px'
