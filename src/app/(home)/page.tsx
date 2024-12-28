@@ -147,6 +147,12 @@ const cameraComparisons: Comparison[] = [
     first: { imageUrl: '/assets/canon-eos-200d.webp', name: 'Canon EOS M50' },
     second: { imageUrl: '/assets/canon-eos-200d.webp', name: 'Sony A6000' },
     pageUrl: AppRoutes.Home
+  },
+  {
+    id: 6,
+    first: { imageUrl: '/assets/canon-eos-200d.webp', name: 'Canon EOS M50 2' },
+    second: { imageUrl: '/assets/canon-eos-200d.webp', name: 'Sony A6000 3' },
+    pageUrl: AppRoutes.Home
   }
 ]
 

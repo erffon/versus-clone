@@ -27,17 +27,17 @@ const ComparisonSlider = ({ data }: ComparisonSlider) => {
   return (
     <div className='pb-10 relative w-11/12 xl:w-full mx-auto'>
       <h3 className='text-base uppercase font-bold mb-4 text-neutral-gray'>WHICH ARE THE MOST POPULAR COMPARISONS?</h3>
-      <div ref={prevRef}>
-        <TbChevronLeft
-          className='text-deep-charcoal absolute top-1/2 -translate-y-1/2 z-20 -left-16 cursor-pointer'
-          size={64}
-        />
+      <div
+        ref={prevRef}
+        className='absolute top-1/2 -translate-y-1/2 z-20 -left-10 cursor-pointer duration-300 hover:-left-12 group'
+      >
+        <TbChevronLeft className='text-deep-charcoal/80 group-hover:text-deep-charcoal duration-300' size={40} />
       </div>
-      <div ref={nextRef}>
-        <TbChevronRight
-          className='text-deep-charcoal absolute top-1/2 -translate-y-1/2 z-20 -right-16 cursor-pointer'
-          size={64}
-        />
+      <div
+        ref={nextRef}
+        className='absolute top-1/2 -translate-y-1/2 z-20 -right-10 cursor-pointer duration-300 hover:-right-12 group'
+      >
+        <TbChevronRight className='text-deep-charcoal/80 group-hover:text-deep-charcoal duration-300' size={40} />
       </div>
       <Swiper
         modules={[Navigation]}

@@ -1,4 +1,3 @@
-import { Breadcrumb } from '../components'
 import { CategoryCard } from './components'
 import { CategoryCardData } from './components/CategoryCard'
 
@@ -95,14 +94,7 @@ const categories: CategoryCardData[] = [
 ]
 
 const CategoriesPage = () => {
-  return (
-    <main className='w-full overflow-x-hidden bg-white pt-14'>
-      <div className='max-w-1170 mx-auto'>
-        <Breadcrumb />
-        <CategoryCard data={categories} />
-      </div>
-    </main>
-  )
+  return <CategoryCard data={categories} />
 }
 
 export default CategoriesPage
