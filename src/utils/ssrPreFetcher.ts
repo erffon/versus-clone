@@ -1,5 +1,5 @@
 import { ICommonProps } from '@/interfaces'
-import { DehydratedState,  QueryClient, QueryFunction, QueryKey, dehydrate } from '@tanstack/react-query'
+import { DehydratedState, QueryClient, QueryFunction, QueryKey, dehydrate } from '@tanstack/react-query'
 import { AxiosError, AxiosRequestConfig, AxiosRequestHeaders } from 'axios'
 import { cookies } from 'next/headers'
 import { getQueryClient } from 'src/providers/reactQueryProvider/helper'
@@ -31,13 +31,13 @@ type TPrefetchQuery = DefaultPropType & {
 
 type PropType = TPrefetchQuery | TPrefetchInfinite
 
-const ssrPreFetcher = <TData, TError = AxiosError<ICommonProps>>(props: Array<PropType> | PropType) => {
+const ssrPreFetcher = async <TData, TError = AxiosError<ICommonProps>>(props: Array<PropType> | PropType) => {
   const queryClient = getQueryClient()
 
   if (Array.isArray(props)) {
-    props.forEach(item => preFetchHandler<TData, TError>({ ...item, queryClient }))
+    props.forEach(async item => await preFetchHandler<TData, TError>({ ...item, queryClient }))
   } else {
-    preFetchHandler<TData, TError>({ ...props, queryClient })
+    await preFetchHandler<TData, TError>({ ...props, queryClient })
   }
 
   const dehydratedState = serializingProps(dehydrate(queryClient))
@@ -47,10 +47,12 @@ const ssrPreFetcher = <TData, TError = AxiosError<ICommonProps>>(props: Array<Pr
 
 export default ssrPreFetcher
 
-const preFetchHandler = <TData, TError = AxiosError<ICommonProps>>(props: PropType & { queryClient: QueryClient }) => {
+const preFetchHandler = async <TData, TError = AxiosError<ICommonProps>>(
+  props: PropType & { queryClient: QueryClient }
+) => {
   const { type, keyName: queryKey, url, baseURL, headers, params, pathParams, queryClient, preFetchType } = props
 
-  const queryCookieProps = preFetchType === 'ssr' ? { Cookie: cookies().toString() } : {}
+  const queryCookieProps = preFetchType === 'ssr' ? { Cookie: (await cookies()).toString() } : {}
 
   if (type === 'prefetchQuery') {
     const queryFn: QueryFunction<ICommonProps<TData>, QueryKey, number> = async () => {

@@ -7,8 +7,8 @@ interface IHydrationBoundaryWrap {
   ssrPreFetcherProps: Parameters<typeof ssrPreFetcher>[0]
 }
 
-const HydrationBoundaryWrapper: FC<IHydrationBoundaryWrap> = ({ children, ssrPreFetcherProps }) => {
-  const { dehydratedState } = ssrPreFetcher(ssrPreFetcherProps)
+const HydrationBoundaryWrapper: FC<IHydrationBoundaryWrap> = async ({ children, ssrPreFetcherProps }) => {
+  const { dehydratedState } = await ssrPreFetcher(ssrPreFetcherProps)
 
   return <HydrationBoundary state={dehydratedState}>{children}</HydrationBoundary>
 }
