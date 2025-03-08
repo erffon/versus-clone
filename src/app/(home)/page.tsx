@@ -158,8 +158,8 @@ const cameraComparisons: Comparison[] = [
 
 export default function Home() {
   return (
-    <main className='w-full overflow-x-hidden'>
-      <section className='w-full h-screen max-h-[880px] bg-hero relative pt-14'>
+    <>
+      <section className='w-full h-screen max-h-[880px] bg-hero relative -mt-18 pt-18'>
         <div className='opacity-20 absolute left-0 -bottom-px h-[90px] z-10 w-full'>
           <svg width='100%' height='100%' viewBox='0 0 400 100' preserveAspectRatio='none'>
             <path d='M0 0 C50 0, 150 50, 200 50 S350 0, 400 10 L400 100 L0 100 Z' fill='white'></path>
@@ -211,7 +211,7 @@ export default function Home() {
           <input
             id='compare'
             name='compare'
-            type='compare'
+            type='text'
             placeholder='Type here to compare'
             autoComplete='off'
             className='w-full flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6'
@@ -224,50 +224,44 @@ export default function Home() {
           </button>
         </div>
       </section>
-      <section className='w-full bg-white pt-28'>
-        <div className='max-w-1170 mx-auto w-11/12'>
-          <Categories categoryTitle='camera' title='trending category' data={articles} />
+      <section className='max-w-1170 mx-auto w-11/12 pt-28'>
+        <Categories categoryTitle='camera' title='trending category' data={articles} />
 
-          <CategoriesTable {...cameras} />
+        <CategoriesTable {...cameras} />
 
-          <ComparisonSlider data={cameraComparisons} />
-        </div>
+        <ComparisonSlider data={cameraComparisons} />
       </section>
-      <section className='w-full bg-white pt-14'>
-        <div className='max-w-1170 mx-auto w-11/12'>
-          <Categories categoryTitle='camera' title='trending category' data={articles} />
+      <section className='max-w-1170 mx-auto w-11/12 pt-14'>
+        <Categories categoryTitle='camera' title='trending category' data={articles} />
 
-          <CategoriesTable {...cameras} />
+        <CategoriesTable {...cameras} />
 
-          <ComparisonSlider data={cameraComparisons} />
-        </div>
+        <ComparisonSlider data={cameraComparisons} />
       </section>
 
-      <section className='w-full bg-white pt-14 pb-12'>
-        <div className='max-w-1170 mx-auto w-full'>
-          <h2 className='text-dark-smoke font-bold tracking-tight text-center whitespace-pre-wrap text-4xl md:text-6xl mb-6 w-3/4 mx-auto'>
-            73k products in 110 categories. A single objective.
-          </h2>
-          <p className='text-dark-smoke text-lg text-center w-4/5 mx-auto mb-10'>
-            We have been working for more than a decade to become your reference guide when it comes to comparisons. We
-            are an impartial team of technology enthusiasts: our sole mission is to help you make informed decisions.
-          </p>
-          <div className='flex items-center justify-center gap-8'>
-            <Link
-              className='px-8 py-3 rounded-full duration-300 bg-vibrant-blue hover:bg-lavender-blue text-sm font-semibold'
-              href={AppRoutes.Categories}
-            >
-              See all categories
-            </Link>
-            <Link
-              className='duration-300 text-vibrant-blue hover:text-lavender-blue text-sm font-semibold'
-              href={AppRoutes.Home}
-            >
-              How we work →
-            </Link>
-          </div>
+      <section className='max-w-1170 mx-auto w-full pt-14 pb-12'>
+        <h2 className='text-dark-smoke font-bold tracking-tight text-center whitespace-pre-wrap text-4xl md:text-6xl mb-6 w-3/4 mx-auto'>
+          73k products in 110 categories. A single objective.
+        </h2>
+        <p className='text-dark-smoke text-lg text-center w-4/5 mx-auto mb-10'>
+          We have been working for more than a decade to become your reference guide when it comes to comparisons. We
+          are an impartial team of technology enthusiasts: our sole mission is to help you make informed decisions.
+        </p>
+        <div className='flex items-center justify-center gap-8'>
+          <Link
+            className='px-8 py-3 rounded-full duration-300 bg-vibrant-blue hover:bg-lavender-blue text-sm font-semibold'
+            href={AppRoutes.Categories}
+          >
+            See all categories
+          </Link>
+          <Link
+            className='duration-300 text-vibrant-blue hover:text-lavender-blue text-sm font-semibold'
+            href={AppRoutes.Home}
+          >
+            How we work →
+          </Link>
         </div>
       </section>
-    </main>
+    </>
   )
 }

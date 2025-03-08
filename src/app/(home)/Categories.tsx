@@ -47,7 +47,7 @@ const Categories = (props: {
           const classes = gridConfig[idx]
 
           return (
-            <Link key={item.description} href={item.href} className={`flex flex-col ${classes}`}>
+            <Link key={item.id} href={item.href} className={`flex flex-col ${classes}`}>
               <div className='relative overflow-hidden rounded-lg shadow-lg group h-full'>
                 <img src={item.imageUrl} alt={'Cars updated'} className='object-cover w-full h-full' />
                 <h3 className='text-lg font-bold absolute left-4 bottom-2'>{item.title}</h3>

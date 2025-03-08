@@ -6,6 +6,7 @@ import { Dialog, DialogPanel, Disclosure, DisclosureButton, DisclosurePanel, Pop
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import { FaSearch } from 'react-icons/fa'
 import {
   TbCategoryPlus,
   TbChartPie,
@@ -17,7 +18,6 @@ import {
   TbRepeat
 } from 'react-icons/tb'
 import { NavItem } from './components'
-import { usePathname } from 'next/navigation'
 
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: TbChartPie },
@@ -27,15 +27,19 @@ const products = [
   { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: TbRepeat }
 ]
 
-const Navbar = () => {
+export interface INavBar {
+  isColoredBg: boolean
+  hasSearch: boolean
+}
+
+const Navbar = ({ hasSearch, isColoredBg }: INavBar) => {
   const scroll = useScrollPosition()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const path = usePathname()
 
   return (
     <header
       className={`${
-        scroll > 0 || path !== AppRoutes.Home ? 'bg-deep-charcoal' : 'bg-transparent'
+        scroll > 0 || isColoredBg ? 'bg-deep-charcoal' : 'bg-transparent'
       } duration-300 fixed top-0 left-0 w-full z-[10000]`}
     >
       <nav aria-label='Global' className='mx-auto flex items-center justify-between py-5 max-w-1170 w-11/12'>
@@ -44,6 +48,17 @@ const Navbar = () => {
             <Image alt='' src='/assets/versus.svg' width={95} height={21} />
           </Link>
         </div>
+
+        {hasSearch && (
+          <div className='flex items-center rounded-lg bg-white/10 px-3 py-1 shadow-md w-9/12 lg:w-44 lg:ml-4 lg:mr-10'>
+            <FaSearch className='mr-2 text-white/80' />
+            <input
+              type='text'
+              placeholder='Search'
+              className='w-full border-none bg-transparent outline-none text-white'
+            />
+          </div>
+        )}
         <div className='flex lg:hidden'>
           <button
             type='button'
@@ -67,7 +82,7 @@ const Navbar = () => {
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className='lg:hidden'>
         <div className='fixed inset-0 z-10' />
-        <DialogPanel className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
+        <DialogPanel className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-deep-charcoal px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
           <div className='flex items-center justify-between'>
             <a href='#' className='-m-1.5 p-1.5'>
               <span className='sr-only'>Your Company</span>

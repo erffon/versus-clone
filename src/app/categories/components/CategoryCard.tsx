@@ -23,7 +23,7 @@ const CategoryCard = ({ data }: { data: CategoryCardData[] }) => {
     <>
       <h2 className='text-4xl font-bold mb-6 text-black'>Categories</h2>
       {/* Use Tailwind CSS columns */}
-      <div className='columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6'>
+      <div className='columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 mb-6'>
         {data?.map((item, index) => (
           <div
             key={index}

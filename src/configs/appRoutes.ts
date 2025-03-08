@@ -1,4 +1,5 @@
 export enum AppRoutes {
   Home = '/',
-  Categories = '/categories'
+  Categories = '/categories',
+  Category = '/categories/'
 }

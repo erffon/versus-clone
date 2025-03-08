@@ -4,7 +4,7 @@ import { AppRoutes } from '@/configs'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-const Breadcrumb: React.FC = () => {
+const Breadcrumb = ({ color = 'black' }: { color?: 'gray' | 'black' }) => {
   const pathname = usePathname()
   const pathSegments = pathname.split('/').filter(Boolean)
 
@@ -13,7 +13,10 @@ const Breadcrumb: React.FC = () => {
       <ol className='list-none p-0 inline-flex'>
         {/* Home link */}
         <li className='flex items-center'>
-          <Link href={AppRoutes.Home} className='text-black hover:underline'>
+          <Link
+            href={AppRoutes.Home}
+            className={`${color === 'black' ? 'text-black' : 'text-muted-gray'} hover:underline`}
+          >
             Home
           </Link>
           {pathSegments.length > 0 && <span className='mx-2 text-neutral-gray'>{'>'}</span>}
@@ -27,7 +30,10 @@ const Breadcrumb: React.FC = () => {
           return (
             <li key={href} className='flex items-center'>
               {!isLast ? (
-                <Link href={href} className='text-black hover:underline capitalize'>
+                <Link
+                  href={href}
+                  className={`${color === 'black' ? 'text-black' : 'text-muted-gray'} hover:underline capitalize`}
+                >
                   {decodeURIComponent(segment)}
                 </Link>
               ) : (
