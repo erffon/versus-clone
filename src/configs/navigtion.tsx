@@ -1,13 +1,15 @@
 import { IconType } from 'react-icons'
 import { TbCategory } from 'react-icons/tb'
 import { AppRoutes } from './appRoutes'
+import { ReactNode } from 'react'
 
 export interface NavLink {
-  label: string
+  label: string | ReactNode
   href: string
   icon?: IconType
   subMenu?: SubMenu[]
   badge?: string
+  className?: string
 }
 
 export interface SubMenu {
@@ -52,5 +54,15 @@ export const navLinks: NavLink[] = [
   { label: 'smartphones', href: `${AppRoutes.Categories}/phone` },
   { label: 'graphics cards', href: `${AppRoutes.Categories}/graphics-card` },
   { label: 'cpus', href: `${AppRoutes.Categories}/cpu` },
-  { label: 'cars', href: `${AppRoutes.Categories}/car`, badge: 'new' }
+  { label: 'cars', href: `${AppRoutes.Categories}/car`, badge: 'new' },
+  {
+    label: (
+      <>
+        Log in <span aria-hidden='true'>&rarr;</span>
+      </>
+    ),
+    href: '#',
+    className:
+      '!no-underline normal-case lg:flex-1 lg:justify-end text-sm font-semibold leading-6 absolute bottom-0 border-b-0'
+  }
 ]

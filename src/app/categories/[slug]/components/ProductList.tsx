@@ -67,13 +67,13 @@ const PointsBadge: FC<{ points: number }> = ({ points }) => {
 
 const ProductList: FC<IProductListProps> = ({ items }) => {
   return (
-    <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 p-4 w-3/4'>
+    <div className='grid grid-cols-1 gap-4 lg:grid-cols-2 p-4 w-full md:w-3/4'>
       {items.map(item => (
-        <div key={item.id} className='relative flex items-center justify-between rounded-xl bg-white p-4 shadow-sm'>
+        <div key={item.id} className='relative flex items-center justify-between rounded-xl bg-white p-4 shadow-xs'>
           {/* Left side: image + points badge + name + subtitle + features */}
           <div className='flex items-start gap-4'>
-            <div className='relative h-20 w-20 flex-shrink-0'>
-              <img src={item.image} alt={item.name} className='h-full w-full rounded object-cover' />
+            <div className='relative h-20 w-20 shrink-0'>
+              <img src={item.image} alt={item.name} className='h-full w-full rounded-sm object-cover' />
               <PointsBadge points={item.points} />
             </div>
 

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { MouseEventHandler } from 'react'
+import { MouseEventHandler, ReactNode } from 'react'
 import { IconType } from 'react-icons'
 import NavBadge from './NavBadge'
 
@@ -7,7 +7,7 @@ interface Submenu {
   onMouseEnter?: MouseEventHandler<HTMLDivElement>
   onMouseLeave?: MouseEventHandler<HTMLDivElement>
   activeSubMenu?: string
-  label: string
+  label: string | ReactNode
   href?: string
   icon?: IconType
   badge?: string
@@ -20,7 +20,6 @@ const Submenu = (props: Submenu) => {
     <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      key={label}
       className={`group relative flex items-center gap-2 py-2 px-4 text-sm leading-6 border-b border-b-transparent  ${
         activeSubMenu === label ? 'border-b-soft-silver' : ''
       }`}

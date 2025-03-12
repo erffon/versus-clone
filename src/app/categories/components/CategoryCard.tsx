@@ -27,7 +27,7 @@ const CategoryCard = ({ data }: { data: CategoryCardData[] }) => {
         {data?.map((item, index) => (
           <div
             key={index}
-            className='mb-5 break-inside-avoid  border border-gray-200 rounded-lg shadow bg-soft-alabaster w-full'
+            className='mb-5 break-inside-avoid  border border-gray-200 rounded-lg shadow-sm bg-soft-alabaster w-full'
           >
             <div className='flex items-center bg-categoryCard p-4'>
               {/* //TODO - must use image url */}

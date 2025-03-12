@@ -176,7 +176,7 @@ export default function Home() {
           </svg>
         </div>
         <div className='flex flex-col justify-center items-center mt-14 max-w-1170 w-11/12 mx-auto'>
-          <h1 className='lowercase text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl relative -tracking-[4px] !leading-relaxed font-bold text-center'>
+          <h1 className='lowercase text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl relative -tracking-[4px] leading-relaxed! font-bold text-center'>
             Compare{' '}
             <span className='relative z-20 after:content-[""] after:absolute after:bottom-1 xs:after:bottom-2 md:after:bottom-2.5 lg:after:bottom-3.5 after:h-1 sm:after:h-1.5 md:after:h-2 lg:after:h-2.5 after:w-[calc(100%_+_12px)] after:-right-2.5 after:bg-[linear-gradient(92deg,_rgb(60,_89,_252),_rgb(118,_0,_224))] after:-z-10'>
               everything
@@ -207,18 +207,18 @@ export default function Home() {
             </Link>
           </p>
         </div>
-        <div className='flex flex-wrap sm:flex-nowrap max-w-screen-sm gap-4 justify-center mx-auto w-11/12'>
+        <div className='flex flex-wrap sm:flex-nowrap max-w-(--breakpoint-sm) gap-4 justify-center mx-auto w-11/12'>
           <input
             id='compare'
             name='compare'
             type='text'
             placeholder='Type here to compare'
             autoComplete='off'
-            className='w-full flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6'
+            className='w-full flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-xs ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6'
           />
           <button
             type='submit'
-            className='flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500'
+            className='flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500'
           >
             Compare
           </button>

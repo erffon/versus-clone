@@ -289,9 +289,9 @@ const CategoryPage = () => {
         </div>
       </section>
       <section className='bg-[#f6f7fb]'>
-        <div className='max-w-1170 w-11/12 mx-auto'>
+        <div className='max-w-1170 sm:w-11/12 mx-auto'>
           <div className='container mx-auto flex'>
-            <div className='w-1/4 h-36 bg-red-600 grow min-w-64 sticky top-18'></div>
+            <div className='w-1/4 h-36 bg-red-600 grow min-w-64 sticky top-18 hidden md:block'></div>
             <ProductList items={phones} />
           </div>
         </div>
