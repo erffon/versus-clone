@@ -1,6 +1,12 @@
 @import 'tailwindcss';
+@plugin 'flowbite-react/plugin/tailwindcss';
+@source '../../.flowbite-react/class-list.json';
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
+@plugin 'tailwind-scrollbar' {
+  nocompatible: true;
+  preferredstrategy: 'pseudoelements';
+}
 
 @theme {
   --color-background: var(--background);
@@ -17,6 +23,7 @@
   --color-dark-smoke: #313131;
   --color-lavender-blue: #6366f1;
   --color-raisin-black: #352b2b;
+  --color-silver: #bebebe;
 
   --height-0_5: 0.125rem;
 

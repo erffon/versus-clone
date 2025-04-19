@@ -1,6 +1,6 @@
 import { Breadcrumb } from '@/app/components'
-import { Title, TagList, ProductList, IProductItem } from './components'
 import { TbAward } from 'react-icons/tb'
+import { Filters, IProductItem, ProductList, TagList, Title } from './components'
 
 const tags = [
   { id: 1, label: 'TOP 10' },
@@ -288,10 +288,11 @@ const CategoryPage = () => {
           </div>
         </div>
       </section>
-      <section className='bg-[#f6f7fb]'>
+      <section className='bg-soft-alabaster'>
         <div className='max-w-1170 sm:w-11/12 mx-auto'>
           <div className='container mx-auto flex'>
-            <div className='w-1/4 h-36 bg-red-600 grow min-w-64 sticky top-18 hidden md:block'></div>
+            <Filters />
+
             <ProductList items={phones} />
           </div>
         </div>

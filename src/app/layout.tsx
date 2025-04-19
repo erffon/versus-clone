@@ -1,7 +1,7 @@
 import { ReactQueryProvider } from '@/providers'
 import type { Metadata } from 'next'
 import './globals.css'
-import { Flowbite } from 'flowbite-react'
+import { ThemeModeScript, ThemeProvider } from 'flowbite-react'
 import customTheme from './theme'
 
 export const metadata: Metadata = {
@@ -16,10 +16,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
+      <head>
+        <ThemeModeScript />
+      </head>
       <body>
         <div>
           <ReactQueryProvider>
-            <Flowbite theme={{ theme: customTheme }}>{children}</Flowbite>
+            <ThemeProvider theme={customTheme}>{children}</ThemeProvider>
           </ReactQueryProvider>
         </div>
       </body>

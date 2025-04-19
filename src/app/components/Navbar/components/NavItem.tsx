@@ -16,6 +16,7 @@ const NavItem = (props: NavLink) => {
       <div className='relative hidden lg:block'>
         <Popover
           trigger='hover'
+          className='border-0 z-20'
           arrow={false}
           placement='bottom-start'
           content={

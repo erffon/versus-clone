@@ -2,12 +2,14 @@
 
 import { AppRoutes, navLinks } from '@/configs'
 import { useBodyScrollLock, useScrollPosition } from '@/hooks'
-import { Navbar as FlowbiteNav } from 'flowbite-react'
+import { Navbar as FlowbiteNav, NavbarBrand, NavbarCollapse, NavbarToggle } from 'flowbite-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
 import { MobileNavItem, NavItem } from './components'
+import { Transition } from '@headlessui/react'
+import { cn } from '@/utils'
 
 export interface INavBar {
   isColoredBg: boolean
@@ -32,10 +34,10 @@ const Navbar = ({ hasSearch, isColoredBg }: INavBar) => {
         scroll > 0 || isColoredBg ? 'bg-deep-charcoal' : 'bg-transparent'
       } duration-300 fixed top-0 left-0 w-full z-10000`}
     >
-      <FlowbiteNav>
-        <FlowbiteNav.Brand as={Link} href={AppRoutes.Home} className='lg:flex-1 min-w-23.75 z-1000'>
+      <FlowbiteNav clearTheme>
+        <NavbarBrand as={Link} href={AppRoutes.Home} className='lg:flex-1 min-w-23.75 z-1000'>
           <Image alt='' src='/assets/versus.svg' width={95} height={21} />
-        </FlowbiteNav.Brand>
+        </NavbarBrand>
 
         {hasSearch && (
           <div className='flex items-center rounded-lg bg-white/10 px-3 py-1 shadow-md w-full lg:w-44 z-1000'>
@@ -48,7 +50,7 @@ const Navbar = ({ hasSearch, isColoredBg }: INavBar) => {
           </div>
         )}
         <div className='flex lg:hidden z-1000'>
-          <FlowbiteNav.Toggle
+          <NavbarToggle
             onClick={() => {
               toggle()
               setIsOpen(prev => !prev)
@@ -64,18 +66,29 @@ const Navbar = ({ hasSearch, isColoredBg }: INavBar) => {
                 />
               </div>
             )}
-          ></FlowbiteNav.Toggle>
+          ></NavbarToggle>
         </div>
 
         {navLinks.map((item, idx) => (
           <NavItem {...item} key={`nav-${idx}`} />
         ))}
 
-        <FlowbiteNav.Collapse className={isOpen ? 'block' : 'hidden'}>
-          {navLinks.map((item, idx) => (
-            <MobileNavItem {...item} key={`mob-nav-${idx}`} />
-          ))}
-        </FlowbiteNav.Collapse>
+        <Transition show={isOpen}>
+          <NavbarCollapse
+            className={cn(
+              // Shared closed styles
+              'data-[closed]:opacity-0',
+              // Entering styles
+              'data-[enter]:duration-300 data-[enter]:data-[closed]:translate-x-full',
+              // Leaving styles
+              'data-[leave]:duration-300 data-[leave]:data-[closed]:translate-x-full'
+            )}
+          >
+            {navLinks.map((item, idx) => (
+              <MobileNavItem {...item} key={`mob-nav-${idx}`} />
+            ))}
+          </NavbarCollapse>
+        </Transition>
       </FlowbiteNav>
     </header>
   )

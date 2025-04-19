@@ -1,32 +1,56 @@
 import { NavLink } from '@/configs'
-import { Accordion } from 'flowbite-react'
+import { Accordion, AccordionContent, AccordionPanel, AccordionTitle } from 'flowbite-react'
 import NavBadge from './NavBadge'
 import Link from 'next/link'
 import { cn } from '@/utils'
+
+const titleStyle = {
+  base: 'flex w-full items-center justify-between p-2 text-sm font-semibold leading-6 uppercase cursor-pointer',
+  heading: 'flex items-center gap-x-1',
+  arrow: {
+    base: 'h-6 w-6 shrink-0 transition-all duration-300',
+    open: {
+      off: '-rotate-90',
+      on: 'rotate-0'
+    }
+  },
+  flush: {
+    off: '',
+    on: 'bg-transparent'
+  },
+  open: {
+    off: 'border-b border-raisin-black',
+    on: ''
+  }
+}
+
+const contentStyle = {
+  base: 'px-6 pb-2'
+}
 
 const MobileNavItem = (props: NavLink) => {
   const { href, label, badge, icon: Icon, subMenu, className } = props
 
   if (subMenu) {
     return (
-      <Accordion collapseAll>
-        <Accordion.Panel>
-          <Accordion.Title>
+      <Accordion collapseAll clearTheme>
+        <AccordionPanel>
+          <AccordionTitle clearTheme theme={titleStyle}>
             {Icon && <Icon />}
             {label}
             {badge && <NavBadge badge={badge} />}
-          </Accordion.Title>
-          <Accordion.Content>
-            <Accordion collapseAll className='!border-0'>
+          </AccordionTitle>
+          <AccordionContent clearTheme theme={contentStyle}>
+            <Accordion collapseAll clearTheme>
               {subMenu.map(item => {
                 return (
-                  <Accordion.Panel key={item.label}>
-                    <Accordion.Title>
+                  <AccordionPanel key={item.label}>
+                    <AccordionTitle clearTheme theme={titleStyle}>
                       {item.icon && <item.icon />}
                       {item.label}
                       {item.badge && <NavBadge badge={item.badge} />}
-                    </Accordion.Title>
-                    <Accordion.Content className='border-b border-raisin-black'>
+                    </AccordionTitle>
+                    <AccordionContent clearTheme theme={contentStyle} className='border-b border-raisin-black'>
                       {item?.subMenu?.map((item, idx) => {
                         return (
                           <Link
@@ -43,13 +67,13 @@ const MobileNavItem = (props: NavLink) => {
                           </Link>
                         )
                       })}
-                    </Accordion.Content>
-                  </Accordion.Panel>
+                    </AccordionContent>
+                  </AccordionPanel>
                 )
               })}
             </Accordion>
-          </Accordion.Content>
-        </Accordion.Panel>
+          </AccordionContent>
+        </AccordionPanel>
       </Accordion>
     )
   }

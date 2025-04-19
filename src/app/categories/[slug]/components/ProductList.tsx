@@ -102,6 +102,108 @@ const ProductList: FC<IProductListProps> = ({ items }) => {
           </button>
         </div>
       ))}
+      {items.map(item => (
+        <div key={item.id} className='relative flex items-center justify-between rounded-xl bg-white p-4 shadow-xs'>
+          {/* Left side: image + points badge + name + subtitle + features */}
+          <div className='flex items-start gap-4'>
+            <div className='relative h-20 w-20 shrink-0'>
+              <img src={item.image} alt={item.name} className='h-full w-full rounded-sm object-cover' />
+              <PointsBadge points={item.points} />
+            </div>
+
+            <div className='flex flex-col'>
+              <h2 className='text-base font-bold text-gray-800'>{item.name}</h2>
+              {item.subtitle && <p className='mt-1 text-sm font-semibold text-blue-600'>{item.subtitle}</p>}
+              {item.features && item.features.length > 0 && (
+                <div className='mt-2 flex flex-wrap text-sm gap-4 text-gray-600 justify-between'>
+                  {item.features.map((feature, idx) => (
+                    <div key={idx} className='flex items-center gap-1 w-[45%]'>
+                      {feature.icon}
+                      <span>{feature.label}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Right side: plus button */}
+          <button
+            onClick={() => item.onAdd?.(item)}
+            className={'flex h-9 w-9 items-center justify-center rounded-full bg-blue-500 text-white hover:bg-blue-600'}
+          >
+            +
+          </button>
+        </div>
+      ))}
+      {items.map(item => (
+        <div key={item.id} className='relative flex items-center justify-between rounded-xl bg-white p-4 shadow-xs'>
+          {/* Left side: image + points badge + name + subtitle + features */}
+          <div className='flex items-start gap-4'>
+            <div className='relative h-20 w-20 shrink-0'>
+              <img src={item.image} alt={item.name} className='h-full w-full rounded-sm object-cover' />
+              <PointsBadge points={item.points} />
+            </div>
+
+            <div className='flex flex-col'>
+              <h2 className='text-base font-bold text-gray-800'>{item.name}</h2>
+              {item.subtitle && <p className='mt-1 text-sm font-semibold text-blue-600'>{item.subtitle}</p>}
+              {item.features && item.features.length > 0 && (
+                <div className='mt-2 flex flex-wrap text-sm gap-4 text-gray-600 justify-between'>
+                  {item.features.map((feature, idx) => (
+                    <div key={idx} className='flex items-center gap-1 w-[45%]'>
+                      {feature.icon}
+                      <span>{feature.label}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Right side: plus button */}
+          <button
+            onClick={() => item.onAdd?.(item)}
+            className={'flex h-9 w-9 items-center justify-center rounded-full bg-blue-500 text-white hover:bg-blue-600'}
+          >
+            +
+          </button>
+        </div>
+      ))}
+      {items.map(item => (
+        <div key={item.id} className='relative flex items-center justify-between rounded-xl bg-white p-4 shadow-xs'>
+          {/* Left side: image + points badge + name + subtitle + features */}
+          <div className='flex items-start gap-4'>
+            <div className='relative h-20 w-20 shrink-0'>
+              <img src={item.image} alt={item.name} className='h-full w-full rounded-sm object-cover' />
+              <PointsBadge points={item.points} />
+            </div>
+
+            <div className='flex flex-col'>
+              <h2 className='text-base font-bold text-gray-800'>{item.name}</h2>
+              {item.subtitle && <p className='mt-1 text-sm font-semibold text-blue-600'>{item.subtitle}</p>}
+              {item.features && item.features.length > 0 && (
+                <div className='mt-2 flex flex-wrap text-sm gap-4 text-gray-600 justify-between'>
+                  {item.features.map((feature, idx) => (
+                    <div key={idx} className='flex items-center gap-1 w-[45%]'>
+                      {feature.icon}
+                      <span>{feature.label}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Right side: plus button */}
+          <button
+            onClick={() => item.onAdd?.(item)}
+            className={'flex h-9 w-9 items-center justify-center rounded-full bg-blue-500 text-white hover:bg-blue-600'}
+          >
+            +
+          </button>
+        </div>
+      ))}
     </div>
   )
 }
