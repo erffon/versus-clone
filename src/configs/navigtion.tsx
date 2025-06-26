@@ -63,6 +63,6 @@ export const navLinks: NavLink[] = [
     ),
     href: '#',
     className:
-      '!no-underline normal-case lg:flex-1 lg:justify-end text-sm font-semibold leading-6 absolute bottom-0 border-b-0'
+      'max-lg:!no-underline max-lg:normal-case lg:flex-1 lg:justify-end max-lg:text-sm font-semibold max-lg:leading-6 max-lg:absolute max-lg:bottom-0 max-lg:border-b-0'
   }
 ]

@@ -3,9 +3,9 @@ import { createTheme } from 'flowbite-react'
 const customTheme = createTheme({
   navbar: {
     root: {
-      base: 'mx-auto flex items-center justify-center py-5 max-w-1170 w-11/12',
+      base: 'mx-auto flex items-center justify-between lg:justify-center py-5 max-w-1170 w-11/12',
       inner: {
-        base: 'mx-auto flex items-center justify-center max-w-1170 w-full gap-x-8 lg:gap-x-12',
+        base: 'mx-auto flex items-center justify-between lg:justify-center max-w-1170 w-full gap-x-8 lg:gap-x-12',
         fluid: {
           on: '',
           off: ''
